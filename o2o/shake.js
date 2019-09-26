@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
     if (window.DeviceMotionEvent) {
         alert(1);
-        window.addEventListener('devicemotion', deviceMotionHandler, false);
+        window.parent.addEventListener('devicemotion', deviceMotionHandler, false);
     }
 
     var isShake = false;
