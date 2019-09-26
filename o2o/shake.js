@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     if (window.DeviceMotionEvent) {
-        alert(1);
+        alert("starting");
         window.addEventListener('devicemotion', deviceMotionHandler, false);
     }
 
