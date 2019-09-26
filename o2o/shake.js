@@ -1,10 +1,21 @@
 define(function (require, exports, module) {
     if (window.DeviceMotionEvent) {
         alert(1);
-        window.parent.addEventListener('devicemotion', deviceMotionHandler, false);
+        window.addEventListener('devicemotion', deviceMotionHandler, false);
     }
 
-    var isShake = false;
+    /**
+     * 检测晃动
+     */
+    var isShake = false;                   // 是否正在摇动
+    var SHAKE_THRESHOLD = 2500;
+    var last_update = 0;
+    var x = 0;
+    var y = 0;
+    var z = 0;
+    var last_x = 0;
+    var last_y = 0;
+    var last_z = 0;
 
     function deviceMotionHandler(eventData) {
         alert(2);
